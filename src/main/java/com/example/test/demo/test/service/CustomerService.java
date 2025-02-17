@@ -1,13 +1,13 @@
 package com.example.test.demo.test.service;
 
-import com.example.test.demo.test.entity.Customer;
+import com.example.test.demo.test.dto.CustomerDTO;
 
 /**
  * Interface with astract methods which will interact with the implementation class
  */
 public interface CustomerService {
 
-    public Customer saveCustomer(Customer customer);
+    public CustomerDTO saveCustomer(CustomerDTO customerDTO);
 
-    public Customer findByCustomerId(Integer id);
+    public CustomerDTO findByCustomerId(Integer id);
 }

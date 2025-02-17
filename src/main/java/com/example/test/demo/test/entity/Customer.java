@@ -1,7 +1,7 @@
 package com.example.test.demo.test.entity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,7 +20,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Customer implements Serializable {
+
+    @SuppressWarnings("unused")
+    private static final Long serialVersionUID = 100L;
     
     @Id //@Id y @GeneratedValue indican que id es clave primaria autoincremental.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +46,7 @@ public class Customer {
     private String createdBy;
 
     @Column(name = "updated_at")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     @Column(name = "updated_by")
     private String updatedBy;
